@@ -17,8 +17,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('users', 'UserController');
 
-//funciones del admin:
+Route::group(['middleware'=>['auth']], function(){
 
-Route::get('/CrearUsuario','UserController@index');
+	Route::get('/home', 'HomeController@index')->name('home');
+
+	//funciones del admin:
+
+	Route::get('/CrearUsuario','UserController@create');
+
+
+
+});
+

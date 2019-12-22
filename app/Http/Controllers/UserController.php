@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class UserController extends Controller
 {
@@ -13,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('registrarUsuario');
+
     }
 
     /**
@@ -23,7 +24,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.registrarUsuario');
     }
 
     /**
@@ -34,7 +35,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $usuario = new User($request->all());
+        $usuario->password = bcrypt($request->password);
+        $usuario->save();
+
+        return view('home');
+
     }
 
     /**
