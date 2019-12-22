@@ -14,7 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-
+        $usuarios = User::orderBy('id', 'ASC')->paginate(3);
+        return view('admin.usuarios')->with('usuarios', $usuarios);
     }
 
     /**

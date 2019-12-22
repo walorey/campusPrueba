@@ -11,21 +11,21 @@
 	  	<div class="form-row">
 	  	  <div class="form-group col-md-6">
 	  	    <label for="validationCustom01">Nombre</label>
-	  	    <input type="text" class="form-control" id="name" name="name">
+	  	    <input type="text" class="form-control" id="name" name="name" required>
 	  	  </div>
 	  	  <div class="form-group col-md-6">
 	  	    <label for="validationCustom02">Apellido</label>
-	  	    <input type="text" class="form-control" id="lastname" name="lastname">
+	  	    <input type="text" class="form-control" id="lastname" name="lastname" required>
 	  	  </div>
 	  	</div>
 	  	<div class="form-row">
 	  	  <div class="form-group col-md-6">
 	  	    <label for="inputEmail4">Email</label>
-	  	    <input type="email" class="form-control" id="email" name="email">
+	  	    <input type="email" class="form-control" id="email" name="email" required>
 	  	  </div>
 	  	  <div class="form-group col-md-6">
 	  	    <label for="inputPassword4">Contraseña</label>
-	  	    <input type="password" class="form-control" id="password" name="password">
+	  	    <input type="password" class="form-control" id="password" name="password" required>
 	  	  </div>
 	  	</div>
 	  	<div class="form-row">
