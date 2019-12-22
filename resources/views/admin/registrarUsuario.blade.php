@@ -31,7 +31,7 @@
 	  	<div class="form-row">
 	  		<div class="form-group col-md-6">
 	  			<label for="validationCustom04">Tipo</label>
-	  			<select class="form-control">
+	  			<select class="form-control" name="type">
  					<option value="member">Cliente</option>
  					<option value="admin">Administrador</option>
 				</select>
