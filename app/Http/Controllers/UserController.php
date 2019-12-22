@@ -14,7 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $usuarios = User::orderBy('id', 'ASC')->paginate(3);
+        $usuarios = User::orderBy('id', 'DESC')->paginate(5);
         return view('admin.usuarios')->with('usuarios', $usuarios);
     }
 
@@ -41,7 +41,7 @@ class UserController extends Controller
         $usuario->password = bcrypt($request->password);
         $usuario->save();
 
-        return view('home');
+        return redirect()->route('usuarios.index');
 
     }
 

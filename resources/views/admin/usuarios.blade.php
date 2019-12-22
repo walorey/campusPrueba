@@ -25,7 +25,7 @@
 		      <td>{{$usuario->lastname}}</td>
 		      <td>{{$usuario->email}}</td>
 		      <td>
-		      	@if($usuario->type=='admin')
+		      	@if($usuario->type =='admin')
 
 		      		Administrador
 
@@ -33,12 +33,19 @@
 		      	Cliente
 		      	@endif
 		      </td>
-		      <td>@mdo</td>
+		      <td>
+		      	<a href="#" title="Editar">
+		      		<button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
+		      	</a>
+		      	<a href="#" title="Eliminar">
+		      		<button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+		      	</a>
+		      </td>
 		    </tr>
 		    @endforeach
 		  </tbody>
 		</table>
-
+		{!! $usuarios->render()!!}
 	</div>
 
 @endsection

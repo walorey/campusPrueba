@@ -27,6 +27,8 @@ Route::group(['middleware'=>['auth']], function(){
 
 	Route::get('/CrearUsuario','UserController@create');
 
-	Route::get('/Usuarios','UserController@index');
+	Route::get('/Usuarios', [
+	'uses' => 'UserController@index',
+    'as'   => 'usuarios.index' ]);
 });
 
