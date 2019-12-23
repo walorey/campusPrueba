@@ -37,9 +37,11 @@
 		      	<a href="{{route('users.edit', $usuario->id)}}" title="Editar">
 		      		<button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
 		      	</a>
-		      	<a href="#" title="Eliminar">
-		      		<button type="button" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
-		      	</a>
+		      	<form class="d-inline" method="POST" action="{{route('users.destroy', $usuario->id)}}">
+		      		@method('DELETE')
+		      		@csrf
+		      		<button type="submit"  title="Eliminar" onclick="return confirm('Estas seguro que deseas eliminarlo?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+		      	</form>
 		      </td>
 		    </tr>
 		    @endforeach
@@ -49,3 +51,4 @@
 	</div>
 
 @endsection
+
