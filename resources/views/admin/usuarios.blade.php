@@ -34,7 +34,7 @@
 		      	@endif
 		      </td>
 		      <td>
-		      	<a href="#" title="Editar">
+		      	<a href="{{route('users.edit', $usuario->id)}}" title="Editar">
 		      		<button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button>
 		      	</a>
 		      	<a href="#" title="Eliminar">
