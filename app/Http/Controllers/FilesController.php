@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Files;
 use Illuminate\Http\Request;
-use App\File;
 
-class FileController extends Controller
+class FilesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class FileController extends Controller
      */
     public function create()
     {
-        return view('admin.subirArchivo');
+        //
     }
 
     /**
@@ -35,28 +35,16 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-
-
-        $request->file('archivo')->store('public');
-        $ruta = $request->file('archivo')->store('public');
-        $file = $request->file('archivo');
-
-        $archivo = new File();
-        $archivo->name = $request->name;
-        $archivo->ruta = $ruta;
-        $archivo->save();
-
-        return 'se guardo el archivo con exito';
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Files  $files
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Files $files)
     {
         //
     }
@@ -64,10 +52,10 @@ class FileController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Files  $files
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Files $files)
     {
         //
     }
@@ -76,10 +64,10 @@ class FileController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Files  $files
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Files $files)
     {
         //
     }
@@ -87,10 +75,10 @@ class FileController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Files  $files
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Files $files)
     {
         //
     }
