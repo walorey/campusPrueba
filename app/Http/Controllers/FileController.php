@@ -14,7 +14,8 @@ class FileController extends Controller
      */
     public function index()
     {
-        //
+        $archivos = File::orderBy('id','DESC')->paginate(10);
+        return view('admin.archivos')->with('archivos', $archivos);
     }
 
     /**
@@ -46,7 +47,7 @@ class FileController extends Controller
         $archivo->ruta = $ruta;
         $archivo->save();
 
-        return 'se guardo el archivo con exito';
+        return redirect()->route('archivos.index');
 
     }
 

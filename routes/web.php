@@ -33,5 +33,9 @@ Route::group(['middleware'=>['auth']], function(){
     'as'   => 'usuarios.index' ]);
 
     Route::get('/SubirArchivo', 'FileController@create');
+
+    Route::get('/Archivos', [
+	'uses' => 'FileController@index',
+    'as'   => 'archivos.index' ]);
 });
 

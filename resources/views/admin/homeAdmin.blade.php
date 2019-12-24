@@ -18,7 +18,7 @@
         <a href="/SubirArchivo">
             <button type="button" class="btn btn-success btn-lg">Subir archivos <i class="far fa-arrow-alt-circle-up"></i></button>
         </a>
-         <a href="#">
+         <a href="/Archivos">
             <button type="button" class="btn btn-secondary btn-lg">Ver archivos <i class="far fa-file-alt"></i></button>
          </a>
 
