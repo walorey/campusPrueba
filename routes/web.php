@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('users', 'UserController');
+Route::resource('files', 'FileController');
 
 Route::group(['middleware'=>['auth']], function(){
 
@@ -30,5 +31,7 @@ Route::group(['middleware'=>['auth']], function(){
 	Route::get('/Usuarios', [
 	'uses' => 'UserController@index',
     'as'   => 'usuarios.index' ]);
+
+    Route::get('/SubirArchivo', 'FileController@create');
 });
 

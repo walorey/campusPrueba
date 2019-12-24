@@ -15,7 +15,7 @@
         <a href="/Usuarios">
             <button type="button" class="btn btn-secondary btn-lg">Ver usuarios <i class="far fa-address-card"></i></button>
         </a>
-        <a href="#">
+        <a href="/SubirArchivo">
             <button type="button" class="btn btn-success btn-lg">Subir archivos <i class="far fa-arrow-alt-circle-up"></i></button>
         </a>
          <a href="#">
