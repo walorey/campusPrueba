@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\File;
+use Illuminate\Support\Facades\Storage;
 
 class FileController extends Controller
 {
@@ -38,17 +39,26 @@ class FileController extends Controller
     {
 
 
-        $request->file('archivo')->store('public');
-        $ruta = $request->file('archivo')->store('public');
-        $file = $request->file('archivo');
-
+        // $ruta = $request->file('archivo')->store('public');
         $archivo = new File();
         $archivo->name = $request->name;
-        $archivo->ruta = $ruta;
+        // $archivo->ruta = asset($ruta);
+        // $archivo->save();
+
+
+        //esto lo mueve bien
+        // Storage::put('public',$request->file('archivo'));
+        // $archivo = new File();
+        // $archivo->name = $request->name;
+        //cuando pongo la ruta en el enlace no muestra nada
+        // $archivo->ruta = $ruta;
+
+        $path = Storage::disk('local')->putFile('public', $request->file('archivo'));
+        $archivo->ruta = substr($path, 7);
         $archivo->save();
 
-        return redirect()->route('archivos.index');
 
+        return redirect()->route('archivos.index');
     }
 
     /**

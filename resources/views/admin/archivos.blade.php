@@ -20,7 +20,9 @@
 	    <tr>
 	      <th scope="row">{{$archivo->id}}</th>
 	      <td>{{$archivo->name}}</td>
-	      <td><a href="/storage/{{$archivo->ruta}}">Enlace</a></td>
+	      <td>
+	      	<a href="/storage/{{$archivo->ruta}}" target="_blank">Enlace</a>
+	      </td>
 	      <td>{{$archivo->created_at}}</td>
 	    </tr>
 	    @endforeach
