@@ -9,16 +9,16 @@
              </div>
          @endif
 
-         <a href="/CrearUsuario">
+         <a href="{{route('crear.usuario')}}">
             <button type="button" class="btn btn-primary btn-lg">Crear usuario <i class="fas fa-user-plus"></i></button>
         </a>
-        <a href="/Usuarios">
+        <a href="{{route('usuarios.index')}}">
             <button type="button" class="btn btn-secondary btn-lg">Ver usuarios <i class="far fa-address-card"></i></button>
         </a>
-        <a href="/SubirArchivo">
+        <a href="{{route('subir.archivo')}}">
             <button type="button" class="btn btn-success btn-lg">Subir archivos <i class="far fa-arrow-alt-circle-up"></i></button>
         </a>
-         <a href="/Archivos">
+         <a href="{{route('archivos.index')}}">
             <button type="button" class="btn btn-secondary btn-lg">Ver archivos <i class="far fa-file-alt"></i></button>
          </a>
 

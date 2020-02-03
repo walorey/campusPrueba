@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::resource('users', 'UserController');
 Route::resource('files', 'FileController');
+Route::resource('config', 'ConfigController');
 
 Route::group(['middleware'=>['auth']], function(){
 
@@ -26,16 +27,23 @@ Route::group(['middleware'=>['auth']], function(){
 
 	//funciones del admin:
 
-	Route::get('/CrearUsuario','UserController@create');
+	Route::get('/CrearUsuario', [
+	'uses'=>'UserController@create',
+	'as'=>'crear.usuario'
+	]);
 
 	Route::get('/Usuarios', [
 	'uses' => 'UserController@index',
     'as'   => 'usuarios.index' ]);
 
-    Route::get('/SubirArchivo', 'FileController@create');
+    Route::get('/SubirArchivo', [
+    'uses'=>'FileController@create',
+    'as'=>'subir.archivo']);
 
     Route::get('/Archivos', [
 	'uses' => 'FileController@index',
     'as'   => 'archivos.index' ]);
+
+
 });
 

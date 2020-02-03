@@ -16,6 +16,8 @@ class AddFilesTable extends Migration
         Schema::create('files', function (Blueprint $table){
             $table->increments('id');
             $table->String('name');
+            $table->String('descripcion')->nullable();
+            $table->String('modulo');
             $table->String('ruta');
             $table->timestamps();
         });

@@ -11,6 +11,8 @@
 	    <tr>
 	      <th scope="col">#</th>
 	      <th scope="col">Nombre</th>
+	      <th scope="col">Descripción</th>
+	      <th scope="col">Modulo</th>
 	      <th scope="col">Enlace</th>
 	      <th scope="col">Fecha</th>
 	    </tr>
@@ -20,15 +22,26 @@
 	    <tr>
 	      <th scope="row">{{$archivo->id}}</th>
 	      <td>{{$archivo->name}}</td>
+	      <td>{{$archivo->descripcion}}</td>
+	      <td>{{$archivo->modulo}}</td>
 	      <td>
-	      	<a href="/storage/{{$archivo->ruta}}" target="_blank">Enlace</a>
+	      	<a href="{{Storage::url($archivo->ruta)}}" target="_blank">Ver</a>
 	      </td>
 	      <td>{{$archivo->created_at}}</td>
+	      <td>
+
+		      	<form class="d-inline" method="POST" action="{{route('files.destroy', $archivo->id)}}">
+		      		@method('DELETE')
+		      		@csrf
+		      		<button type="submit"  title="Eliminar" onclick="return confirm('Estas seguro que deseas eliminarlo?')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+		      	</form>
+
+	      </td>
 	    </tr>
 	    @endforeach
 	  </tbody>
 	</table>
-
+	{!! $archivos->render()!!}
 </div>
 
 @endsection('content')

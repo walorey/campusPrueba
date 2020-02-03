@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\File;
-use Illuminate\Support\Facades\Storage;
 
-class FileController extends Controller
+class FrontController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +13,7 @@ class FileController extends Controller
      */
     public function index()
     {
-        $archivos = File::orderBy('id','DESC')->paginate(10);
-        return view('admin.archivos')->with('archivos', $archivos);
+        //
     }
 
     /**
@@ -26,7 +23,7 @@ class FileController extends Controller
      */
     public function create()
     {
-        return view('admin.subirArchivo');
+        //
     }
 
     /**
@@ -37,30 +34,7 @@ class FileController extends Controller
      */
     public function store(Request $request)
     {
-
-
-        $ruta = $request->file('archivo')->store('public');
-        $archivo = new File();
-        $archivo->name = $request->name;
-        // $archivo->ruta = asset($ruta);
-        // $archivo->save();
-
-
-        //esto lo mueve bien
-        // Storage::put('public',$request->file('archivo'));
-        // $archivo = new File();
-        // $archivo->name = $request->name;
-        //cuando pongo la ruta en el enlace no muestra nada
-        // $archivo->ruta = $ruta;
-
-        // $path = Storage::disk('local')->putFile('public', $request->file('archivo'));
-        $archivo->descripcion = $request->descripcion;
-        $archivo->modulo = $request->modulo;
-        $archivo->ruta = $ruta;
-        $archivo->save();
-
-
-        return redirect()->route('archivos.index');
+        //
     }
 
     /**
@@ -105,8 +79,6 @@ class FileController extends Controller
      */
     public function destroy($id)
     {
-        $archivo = File::find($id);
-        $archivo->delete();
-        return redirect()->route('archivos.index');
+        //
     }
 }
