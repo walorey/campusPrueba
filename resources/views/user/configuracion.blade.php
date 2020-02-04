@@ -16,8 +16,9 @@
 		@method('PUT')
 
 		  <div class="form-group mx-sm-3 mb-2">
-		    <label for="inputPassword2" class="sr-only">Contraseña</label>
-		    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+		    <input type="password" class="form-control" name="passwordactual" placeholder="Contraseña actual">
+		    <input type="password" class="form-control" name="passwordnuevo" placeholder="Contraseña nueva">
+		    <input type="password" class="form-control" name="password2" placeholder="Repetir contraseña">
 		  </div>
 		  <button type="submit" class="btn btn-primary mb-2">Cambiar</button>
 		</form>

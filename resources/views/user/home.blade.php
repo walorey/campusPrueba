@@ -56,29 +56,33 @@
     @endif
   @endfor
 
-  @foreach($archivos as $archivo)
 
-    @if($archivo->modulo=="videos")
+
+
 
     <div class="card">
-      <div class="card-header" id="heading{{$i}}">
+      <div class="card-header" id="headingvideos">
         <h2 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{$i}}" aria-expanded="true" aria-controls="collapse{{$i}}">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsevideos" aria-expanded="true" aria-controls="collapsevideos">
             Videos
           </button>
         </h2>
       </div>
-    <div id="collapse{{$i}}" class="collapse " aria-labelledby="heading{{$i}}" data-parent="#accordionExample">
+    <div id="collapsevideos" class="collapse " aria-labelledby="headingvideos" data-parent="#accordionExample">
         <div class="card-body">
+          @foreach($archivos as $archivo)
+              @if($archivo->modulo=="videos")
               <ul>
                 <li><a href="{{Storage::url($archivo->ruta)}}" target="_blank">{{$archivo->name}}</a></li>
               </ul>
+              @else
+              @endif
+              @endforeach
           </div>
       </div>
     </div>
-    @else
-    @endif
-  @endforeach
+
+
 
 </div>
 
