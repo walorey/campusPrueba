@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Validator;
+use Auth;
 
 class ConfigController extends Controller
 {
@@ -71,8 +73,26 @@ class ConfigController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $rules = [
+            'password' => 'required|confirmed'
+        ];
+
+        $messages = [
+            'required' => 'La contraseña es requerida.',
+            'confirmed' => 'Las contraseñas no coinciden'
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if($validator->fails())
+            return redirect()->back()->withErrors($validator);
+
+        if (!Auth::attempt(['email' => Auth::user()->email, 'password' => $request['passwordactual']]))
+            return redirect()->back()->withErrors(['password' => ['La contraseña actual no coincide']]);
+
         $usuario = User::find($id);
-        $usuario->password = $request->password;
+        $usuario->password = bcrypt($request->password);
         $usuario->save();
         return redirect()->route('home');
     }
