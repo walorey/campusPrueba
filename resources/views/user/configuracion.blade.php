@@ -17,7 +17,7 @@
 
 		  <div class="form-group mx-sm-3 mb-2">
 		    <input type="password" class="form-control" name="passwordactual" placeholder="Contraseña actual">
-		    <input type="password" class="form-control" name="passwordnuevo" placeholder="Contraseña nueva">
+		    <input type="password" class="form-control" name="password" placeholder="Contraseña nueva">
 		    <input type="password" class="form-control" name="password2" placeholder="Repetir contraseña">
 		  </div>
 		  <button type="submit" class="btn btn-primary mb-2">Cambiar</button>
