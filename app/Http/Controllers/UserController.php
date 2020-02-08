@@ -83,6 +83,7 @@ class UserController extends Controller
         $usuario->lastname = $request->lastname;
         $usuario->email = $request->email;
         $usuario->type = $request->type;
+        $usuario->password = bcrypt($request->password);
         $usuario->save();
         return redirect()->route('usuarios.index');
 

@@ -12,17 +12,17 @@
 	  	<div class="form-row">
 	  	  <div class="form-group col-md-6">
 	  	    <label for="validationCustom01">Nombre</label>
-	  	    <input type="text" class="form-control" id="name" name="name" required value="{{$usuario->name}}">
+	  	    <input type="text" class="form-control" id="name" name="name" value="{{$usuario->name}}">
 	  	  </div>
 	  	  <div class="form-group col-md-6">
 	  	    <label for="validationCustom02">Apellido</label>
-	  	    <input type="text" class="form-control" id="lastname" name="lastname" required value="{{$usuario->lastname}}">
+	  	    <input type="text" class="form-control" id="lastname" name="lastname" value="{{$usuario->lastname}}">
 	  	  </div>
 	  	</div>
 	  	<div class="form-row">
 	  	  <div class="form-group col-md-6">
 	  	    <label for="inputEmail4">Email</label>
-	  	    <input type="email" class="form-control" id="email" name="email" required value="{{$usuario->email}}">
+	  	    <input type="email" class="form-control" id="email" name="email" value="{{$usuario->email}}">
 	  	  </div>
 		  <div class="form-group col-md-6">
 			<label for="validationCustom04">Tipo</label>
@@ -44,6 +44,12 @@
 			</select>
 		   </div>
 	  	</div>
+	  	<div class="form-row">
+		   	<div class="form-group col-md-6">
+		   		<label for="inputPassword4">Contraseña</label>
+	  	    	<input type="password" class="form-control" id="password" name="password" value="{{$usuario->password}}">
+		   	</div>
+		</div>
 	  	<button type="submit" class="btn btn-primary">Guardar</button>
 	</form>
 
