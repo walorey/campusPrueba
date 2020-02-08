@@ -82,7 +82,8 @@ class FileController extends Controller
      */
     public function edit($id)
     {
-        //
+        $archivo = File::find($id);
+        return view('admin.editarArchivo')->with('archivo', $archivo);
     }
 
     /**
@@ -94,7 +95,13 @@ class FileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $archivo = File::find($id);
+        $archivo->name = $request->name;
+        $archivo->descripcion = $request->descripcion;
+        $archivo->modulo = $request->modulo;
+        $archivo->save();
+        return redirect()->route('archivos.index');
+
     }
 
     /**
