@@ -59,9 +59,7 @@ class ConfigController extends Controller
      */
     public function edit($id)
     {
-        $usuario = User::find($id);
-
-        return view('user.configuracion')->with('usuario',$usuario);
+        //
     }
 
     /**
@@ -106,5 +104,10 @@ class ConfigController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function editarConfig()
+    {
+        return view('user.configuracion');
     }
 }

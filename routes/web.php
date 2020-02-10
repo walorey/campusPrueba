@@ -27,6 +27,10 @@ Route::group(['middleware'=>['auth']], function(){
 
 	Route::resource('config', 'ConfigController');
 
+	Route::get('Configuracion', [
+	'uses' => 'ConfigController@editarConfig',
+	'as' => 'editar.config'
+	]);
 
 
 

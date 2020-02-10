@@ -14,7 +14,7 @@
 			<p> {{$errors->first('password')}} </p>
 		@endif
 
-		<form class="form-inline" method="post" action="{{route('config.update', $usuario)}}">
+		<form class="form-inline" method="post" action="{{route('config.update', Auth::user()->id)}}">
 
 		@csrf
 		@method('PUT')
