@@ -17,15 +17,27 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('users', 'UserController');
-Route::resource('files', 'FileController');
-Route::resource('config', 'ConfigController');
+
+
+
 
 Route::group(['middleware'=>['auth']], function(){
 
 	Route::get('/home', 'HomeController@index')->name('home');
 
-	//funciones del admin:
+	Route::resource('config', 'ConfigController');
+
+
+
+
+});
+
+Route::group(['middleware'=>['admin'],'prefix' => 'admin'], function(){
+
+		//funciones del admin:
+
+	Route::resource('users', 'UserController');
+	Route::resource('files', 'FileController');
 
 	Route::get('/CrearUsuario', [
 	'uses'=>'UserController@create',
@@ -44,6 +56,13 @@ Route::group(['middleware'=>['auth']], function(){
 	'uses' => 'FileController@index',
     'as'   => 'archivos.index' ]);
 
+    Route::put('/Blanquear/{id}', [
+    'uses'=>'UserController@blanquearPassword',
+    'as'=>'blanquear.password'
+    ]);
 
 });
+
+
+
 

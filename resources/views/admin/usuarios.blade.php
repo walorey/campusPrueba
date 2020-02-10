@@ -12,7 +12,7 @@
 			<div class="col-lg-4 col-sm-12 col-md-12 col-xs-12">
 				<div class="btn-group" role="group" aria-label="Basic example">
 				  <a href="{{route('home')}}"><button type="button" class="btn btn-secondary btn-sm" style="margin-right: 5px;">Volver al inicio</button></a>
-				  <a href="{{route('subir.archivo')}}"><button type="button" class="btn btn-secondary btn-sm">Registrar usuario</button></a>
+				  <a href="{{route('crear.usuario')}}"><button type="button" class="btn btn-secondary btn-sm">Registrar usuario</button></a>
 				</div>
 			</div>
 			<div class="col-lg-4 col-sm-12 col-md-12 col-xs-12">

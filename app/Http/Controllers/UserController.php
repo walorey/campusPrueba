@@ -83,7 +83,6 @@ class UserController extends Controller
         $usuario->lastname = $request->lastname;
         $usuario->email = $request->email;
         $usuario->type = $request->type;
-        $usuario->password = bcrypt($request->password);
         $usuario->save();
         return redirect()->route('usuarios.index');
 
@@ -100,5 +99,14 @@ class UserController extends Controller
         $usuario = User::find($id);
         $usuario->delete();
         return redirect()->route('usuarios.index');
+    }
+
+    public function blanquearPassword(Request $request, $id)
+    {
+        $usuario = User::find($id);
+        $usuario->password = bcrypt($request->password);
+        $usuario->save();
+        return redirect()->route('usuarios.index');
+
     }
 }

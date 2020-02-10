@@ -44,13 +44,26 @@
 			</select>
 		   </div>
 	  	</div>
-	  	<div class="form-row">
+
+	  	<button type="submit" class="btn btn-primary">Guardar</button>
+	</form>
+
+	<br>
+
+	<h2>Blanquear contraseña</h2>
+
+	<form method="POST" action="{{ route('blanquear.password', $usuario) }}">
+		@csrf
+		@method('PUT')
+		<div class="form-row">
 		   	<div class="form-group col-md-6">
 		   		<label for="inputPassword4">Contraseña</label>
-	  	    	<input type="password" class="form-control" id="password" name="password" value="{{$usuario->password}}">
+	  	    	<input type="password" class="form-control" id="password" name="password">
 		   	</div>
 		</div>
-	  	<button type="submit" class="btn btn-primary">Guardar</button>
+
+		<button type="submit" class="btn btn-primary">Blanquear</button>
+
 	</form>
 
 </div>
