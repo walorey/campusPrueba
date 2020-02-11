@@ -30,12 +30,35 @@
       </div>
     </div>
 
-    @else
+    @elseif($i<7)
     <div class="card">
       <div class="card-header" id="heading{{$i}}">
         <h2 class="mb-0">
           <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{$i}}" aria-expanded="true" aria-controls="collapse{{$i}}">
             Modulo #{{$i}}
+          </button>
+        </h2>
+      </div>
+
+      <div id="collapse{{$i}}" class="collapse " aria-labelledby="heading{{$i}}" data-parent="#accordionExample">
+        <div class="card-body">
+          @foreach($archivos as $archivo)
+            @if($archivo->modulo==$i)
+              <ul>
+                <li><a href="{{Storage::url($archivo->ruta)}}" target="_blank">{{$archivo->name}}</a></li>
+              </ul>
+            @else
+            @endif
+          @endforeach
+        </div>
+      </div>
+    </div>
+    @elseif($i==7)
+    <div class="card">
+      <div class="card-header" id="heading{{$i}}">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{$i}}" aria-expanded="true" aria-controls="collapse{{$i}}">
+            MODULO #{{$i}} <b>(SOLO PARA CHINOS)</b>
           </button>
         </h2>
       </div>
