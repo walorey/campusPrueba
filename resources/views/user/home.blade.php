@@ -1,4 +1,14 @@
+  <div class="card">
+    <div class="card-header">
+      <a href="{{route('foro.index')}}"><button type="button" class="btn btn-dark">Foro</button></a>
+    </div>
+  </div>
+
 <div class="container">
+
+  <br>
+
+
   <h1>Material de estudio</h1>
 
 <div class="accordion" id="accordionExample">

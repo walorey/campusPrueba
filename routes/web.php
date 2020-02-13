@@ -32,6 +32,20 @@ Route::group(['middleware'=>['auth']], function(){
 	'as' => 'editar.config'
 	]);
 
+	Route::resource('discusiones', 'DiscusionesController');
+
+	Route::group(['prefix' => 'foro'], function(){
+
+		Route::get('/', [
+		'uses' => 'DiscusionesController@index',
+		'as' => 'foro.index'
+		]);
+
+		Route::get('/NuevaDiscusion', [
+		'uses' =>'DiscusionesController@create',
+		'as' =>'crear.discusion'
+		]);
+	});
 
 
 });
