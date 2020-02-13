@@ -22,17 +22,20 @@
 
             {{-- aca empiezan las preguntas
  --}}
+
+            @foreach($discusiones as $discusion)
+
             <div class="card">
               <div class="card-header">
                 Pregunta <i class="fas fa-comments"></i>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Special title treatment</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <h5 class="card-title">{{$discusion->titulo}}</h5>
+                <p class="card-text">{{$discusion->cuerpo}}</p>
                 <a href="#" class="btn btn-primary">Ver</a>
               </div>
             </div>
-
+            @endforeach
         </div>
         <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
 
