@@ -9,15 +9,15 @@ class Comentario extends Model
 
 	protected $table ="comentarios";
 
-    protected $fillable = ['id_discusion', 'id_user', 'cuerpo'];
+    protected $fillable = ['discusion_id', 'id_user', 'cuerpo'];
 
 
     public function discusion()
     {
-        return $this->belongsTo('App\Discusion', 'id_discusion');
+        return $this->belongsTo('App\Discusion', 'discusion_id');
     }
 
-	public function discusion()
+	public function usuario()
     {
         return $this->belongsTo('App\User', 'id_user');
     }

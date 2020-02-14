@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Discusion;
+use App\Comentario;
+use Illuminate\Support\Facades\Auth;
 
 class ComentarioController extends Controller
 {
@@ -85,6 +87,11 @@ class ComentarioController extends Controller
 
     public function comentar(Request $request, $id)
     {
+        $comentario = new Comentario($request->all());
+        $comentario->id_discusion = $id;
+        $comentario->id_user = Auth::User()->id;
+        $comentario->save();
 
+        return redirect()->route('discusiones.show', $discusion->id);
     }
 }

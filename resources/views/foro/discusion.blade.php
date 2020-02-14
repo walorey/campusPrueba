@@ -23,13 +23,15 @@
 
 		<h4>Comentarios</h4>
 
+		@foreach($discusion->comments as $comentario)
 
 		<div class="card">
-		  <div class="card-header">Header</div>
+		  <div class="card-header">{{$comentario->usuario->name}}</div>
 		  <div class="card-body text-dark">
-		    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		    <p class="card-text">{{$comentario->cuerpo}}</p>
 		  </div>
 		</div>
+		@endforeach
 
 		<br>
 
@@ -38,7 +40,7 @@
 		<div class="card border-info mb-3">
 		  <div class="card-header">Comentar</div>
 		  <div class="card-body text-info">
-		  	<form action="{{route('comentarios.comentar', $discusion->id)}}" method="post" >
+		  	<form action="{{route('discusiones.comentar', $discusion->id)}}" method="post" >
 		  		@csrf
 
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Discusion;
+use App\Comentario;
 
 class DiscusionesController extends Controller
 {
@@ -95,5 +96,17 @@ class DiscusionesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function comentar(Request $request, $id)
+    {
+        $comentario = new Comentario($request->all());
+        $comentario->discusion_id = $id;
+        $comentario->id_user = Auth::User()->id;
+        $comentario->save();
+        $discusion = Discusion::find($id);
+
+        return view('foro.discusion')->with('discusion', $discusion);
     }
 }
