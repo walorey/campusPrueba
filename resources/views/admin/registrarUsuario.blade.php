@@ -41,6 +41,10 @@
 	  	<button type="submit" class="btn btn-primary">Guardar</button>
 	</form>
 
+	<br>
+
+	<a href="{{route('home')}}"><button type="button" class="btn btn-secondary" style="margin-right: 5px;">Volver al inicio</button></a>
+
 </div>
 
 @endsection

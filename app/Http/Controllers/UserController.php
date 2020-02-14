@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -108,5 +109,11 @@ class UserController extends Controller
         $usuario->save();
         return redirect()->route('usuarios.index');
 
+    }
+
+    public function misDiscusiones()
+    {
+        $usuario = Auth::User();
+        return view('foro.misDiscusiones')->with('usuario', $usuario);
     }
 }

@@ -46,6 +46,11 @@ Route::group(['middleware'=>['auth']], function(){
 		'as' =>'crear.discusion'
 		]);
 
+		Route::get('MisPreguntas', [
+		'uses' => 'UserController@misDiscusiones',
+		'as' => 'mis.discusiones'
+		]);
+
 	});
 
 	Route::post('/Comentarios/{id}', [

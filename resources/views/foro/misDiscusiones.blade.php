@@ -5,15 +5,7 @@
     <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
 
-            {{-- categorias --}}
 
-{{--             <div class="card border-primary mb-3" style="max-width: 18rem;">
-              <div class="card-header">Categorías</div>
-              <div class="card-body text-primary">
-                <h5 class="card-title">Primary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div> --}}
 
           <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-info">Preguntar</button>
           <a href="{{route('mis.discusiones')}}"><button type="button" class="btn btn-success">Mis preguntas</button></a>
@@ -24,7 +16,7 @@
             {{-- aca empiezan las preguntas
  --}}
 
-            @foreach($discusiones as $discusion)
+            @foreach($usuario->discusiones as $discusion)
 
             <div class="card">
               <div class="card-header">
@@ -47,7 +39,7 @@
 
             @endforeach
 
-            {!! $discusiones->render()!!}
+
         </div>
         <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
 
