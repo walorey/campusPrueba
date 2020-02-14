@@ -27,7 +27,10 @@
 
             <div class="card">
               <div class="card-header">
-                Pregunta <i class="fas fa-comments"></i>
+                {{$discusion->usuario->name}}
+                {{$discusion->usuario->lastname}}
+                <i class="fas fa-comments"></i>
+
               </div>
               <div class="card-body">
                 <h5 class="card-title">{{$discusion->titulo}}</h5>
@@ -36,6 +39,8 @@
               </div>
             </div>
             @endforeach
+
+            {!! $discusiones->render()!!}
         </div>
         <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
 
@@ -59,12 +64,12 @@
 
               <div class="form-group">
                 <label for="formGroupExampleInput">¿Cuál es tu duda?</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" name="titulo" placeholder="¿Que alimentos...?">
+                <input type="text" class="form-control" id="formGroupExampleInput" name="titulo" required placeholder="¿Que alimentos...?">
               </div>
 
              <div class="form-group">
                 <label for="exampleFormControlTextarea1">Detalles</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="cuerpo" placeholder="..."></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="cuerpo"  required placeholder="..."></textarea>
              </div>
 
             <div class="modal-footer">
