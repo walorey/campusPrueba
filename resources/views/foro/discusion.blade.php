@@ -37,6 +37,8 @@
 
 {{-- 		aca terminan los comentarios --}}
 
+		@if(Auth::user()->type == 'admin')
+
 		<div class="card border-info mb-3">
 		  <div class="card-header">Comentar</div>
 		  <div class="card-body text-info">
@@ -51,11 +53,10 @@
 			  <button type="submit" class="btn btn-outline-primary">Enviar</button>
 
 		  	</form>
-
 		  </div>
-
-
 		</div>
+		@else
+		@endif
 
 	</div>
 

@@ -90,6 +90,10 @@ Route::group(['middleware'=>['admin'],'prefix' => 'admin'], function(){
     'as'=>'blanquear.password'
     ]);
 
+    Route::get('/Preguntas', [
+    'uses' => 'DiscusionesController@administrarDiscusiones',
+    'as' => 'ver.discusiones'
+    ]);
 });
 
 

@@ -95,7 +95,9 @@ class DiscusionesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $discusion = Discusion::find($id);
+        $discusion->delete();
+        return redirect()->route('ver.discusiones');
     }
 
 
@@ -108,5 +110,16 @@ class DiscusionesController extends Controller
         $discusion = Discusion::find($id);
 
         return view('foro.discusion')->with('discusion', $discusion);
+    }
+
+    public function administrarDiscusiones()
+    {
+        $discusiones = Discusion::orderBy('id', 'DESC')->paginate(10);
+
+          $discusiones->each(function($discusiones){
+            $discusiones->cuerpo = substr($discusiones->cuerpo, 0, 50).' ...';
+        });
+
+        return view('admin.discusiones')->with('discusiones', $discusiones);
     }
 }
