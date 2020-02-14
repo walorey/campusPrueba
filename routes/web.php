@@ -45,8 +45,15 @@ Route::group(['middleware'=>['auth']], function(){
 		'uses' =>'DiscusionesController@create',
 		'as' =>'crear.discusion'
 		]);
+
 	});
 
+	Route::post('/Comentarios/{id}', [
+	'uses'=>'ComentarioController@comentar',
+	'as'=>'comentarios.comentar'
+	 ]);
+
+	Route::resource('comentarios', 'ComentarioController');
 
 });
 

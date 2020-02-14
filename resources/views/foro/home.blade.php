@@ -31,13 +31,20 @@
                 {{$discusion->usuario->lastname}}
                 <i class="fas fa-comments"></i>
 
+{{--                 @php
+                 $discusion->cuerpo = substr($discusion->cuerpo, 0, 50) . '...' ;
+                @endphp
+ --}}
               </div>
               <div class="card-body">
                 <h5 class="card-title">{{$discusion->titulo}}</h5>
                 <p class="card-text">{{$discusion->cuerpo}}</p>
-                <a href="#" class="btn btn-primary">Ver</a>
+                <a href="{{route('discusiones.show', $discusion->id)}}" class="btn btn-primary">Ver más</a>
               </div>
             </div>
+
+            <br>
+
             @endforeach
 
             {!! $discusiones->render()!!}

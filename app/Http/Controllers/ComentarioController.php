@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\User;
-use App\Discusion;
 
-class DiscusionesController extends Controller
+
+class ComentarioController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +14,7 @@ class DiscusionesController extends Controller
      */
     public function index()
     {
-        $discusiones = Discusion::orderBy('id', 'DESC')->paginate(5);
-
-          $discusiones->each(function($discusiones){
-            $discusiones->cuerpo = substr($discusiones->cuerpo, 0, 50).' ...';
-        });
-
-        return view('foro.home')->with('discusiones', $discusiones);
+        //
     }
 
     /**
@@ -32,7 +24,7 @@ class DiscusionesController extends Controller
      */
     public function create()
     {
-        return view('foro.nuevaDiscusion');
+        //
     }
 
     /**
@@ -43,11 +35,7 @@ class DiscusionesController extends Controller
      */
     public function store(Request $request)
     {
-        $discusion = new Discusion($request->all());
-        $discusion->user_id = Auth::User()->id;
-        $discusion->save();
 
-        return redirect()->route('foro.index');
     }
 
     /**
@@ -58,9 +46,7 @@ class DiscusionesController extends Controller
      */
     public function show($id)
     {
-        $discusion = Discusion::find($id);
-
-        return view('foro.discusion')->with('discusion', $discusion);
+        //
     }
 
     /**
@@ -95,5 +81,10 @@ class DiscusionesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function comentar(Request $request, $id)
+    {
+
     }
 }
