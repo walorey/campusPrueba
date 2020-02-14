@@ -26,7 +26,7 @@
 		@foreach($discusion->comments as $comentario)
 
 		<div class="card">
-		  <div class="card-header">{{$comentario->usuario->name}}</div>
+		  <div class="card-header">{{$comentario->usuario->name}} {{$comentario->usuario->lastname}} {{$comentario->created_at}}</div>
 		  <div class="card-body text-dark">
 		    <p class="card-text">{{$comentario->cuerpo}}</p>
 		  </div>
