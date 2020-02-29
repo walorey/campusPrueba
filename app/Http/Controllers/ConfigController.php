@@ -83,6 +83,7 @@ class ConfigController extends Controller
 
         $validator = Validator::make($request->all(), $rules, $messages);
 
+
         if($validator->fails())
             return redirect()->back()->withErrors($validator);
 

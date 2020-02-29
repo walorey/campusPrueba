@@ -31,7 +31,7 @@
           <div class="card-header" id="heading{{$i}}">
             <h2 class="mb-0">
               <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{$i}}" aria-expanded="true" aria-controls="collapse{{$i}}">
-                Modulo 1 y 2
+                Módulo 1 y 2
               </button>
             </h2>
           </div>
@@ -78,7 +78,7 @@
           <div class="card-header" id="heading{{$i}}">
             <h2 class="mb-0">
               <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{$i}}" aria-expanded="true" aria-controls="collapse{{$i}}">
-                MODULO #{{$i}} <b>(SOLO PARA CHINOS)</b>
+                Módulo #{{$i}} <b>(Idioma Chino Mandarín)</b> | 模块#7
               </button>
             </h2>
           </div>
@@ -98,7 +98,6 @@
         </div>
         @endif
       @endfor
-
 
 
 

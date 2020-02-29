@@ -15,9 +15,9 @@
         <a href="{{route('usuarios.index')}}">
             <button type="button" class="btn btn-secondary btn-lg">Ver usuarios <i class="far fa-address-card"></i></button>
         </a>
-        <a href="{{route('subir.archivo')}}">
+{{--         <a href="{{route('subir.archivo')}}">
             <button type="button" class="btn btn-success btn-lg">Subir archivos <i class="far fa-arrow-alt-circle-up"></i></button>
-        </a>
+        </a> --}}
          <a href="{{route('archivos.index')}}">
             <button type="button" class="btn btn-secondary btn-lg">Ver archivos <i class="far fa-file-alt"></i></button>
          </a>

@@ -4,8 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Campus</title>
 
+        <link rel="icon" href="{{asset('img/favicon.ico')}}" type="image/x-icon">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -81,18 +82,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    AlimenCampus!
+                    <img src="{{asset('img/logo-blanco.png')}}" class="img-responsive">
+
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <h1>Educación alimentaria</h1>
             </div>
         </div>
     </body>

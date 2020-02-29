@@ -27,6 +27,6 @@
 		  <button type="submit" class="btn btn-primary mb-2">Cambiar</button>
 		</form>
 
-		<p>Si usted olvido su contraseña comuniquese con info@educacionalimentaria.com para blaquearla.</p>
+		<p>Si usted olvido su contraseña comuniquese con alimentaria.edu@gmail.com para blaquearla.</p>
 	</div>
 @endsection

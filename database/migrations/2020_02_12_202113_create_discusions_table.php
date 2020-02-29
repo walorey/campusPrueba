@@ -15,8 +15,9 @@ class CreateDiscusionsTable extends Migration
     {
         Schema::create('discusions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id');
             $table->string('titulo');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('cuerpo');
             $table->timestamps();
         });

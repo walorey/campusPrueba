@@ -9,7 +9,7 @@ class Discusion extends Model
 
     protected $table = "discusions";
 
-    protected $fillable = ['user_id', 'titulo','cuerpo'];
+    protected $fillable = ['titulo', 'user_id', 'cuerpo'];
 
 
     public function comments()
