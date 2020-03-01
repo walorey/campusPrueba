@@ -82,7 +82,13 @@ class ComentarioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comentario = Comentario::find($id);
+        $discusion = Discusion::find($comentario->discusion->id);
+        $comentario->delete();
+
+
+        return redirect()->route('discusiones.show', $discusion->id)->with('mensaje', 'Se ha eliminado el comentario');
+
     }
 
     public function comentar(Request $request, $id)

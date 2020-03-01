@@ -109,7 +109,7 @@ class DiscusionesController extends Controller
         $comentario->save();
         $discusion = Discusion::find($id);
 
-        return view('foro.discusion')->with('discusion', $discusion);
+        return redirect()->route('discusiones.show', $id);
     }
 
     public function administrarDiscusiones()

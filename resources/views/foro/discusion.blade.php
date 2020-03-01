@@ -26,7 +26,24 @@
 		@foreach($discusion->comments as $comentario)
 
 		<div class="card">
-		  <div class="card-header">{{$comentario->usuario->name}} {{$comentario->usuario->lastname}} {{$comentario->created_at}}</div>
+		  <div class="card-header">{{$comentario->usuario->name}} {{$comentario->usuario->lastname}}
+
+		  	<span class="float-right">
+		  		<span>{{$comentario->created_at}} &nbsp</span>
+
+
+		  	    <form class="d-inline" method="POST" action="{{route('comentarios.destroy', $comentario->id)}}">
+                  @method('DELETE')
+                  @csrf
+                  <button type="submit"  title="Eliminar" onclick="return confirm('¿Estas seguro que deseas eliminar el comentario?')" class="float-right"><i class="fas fa-trash"></i></button>
+                </form>
+
+
+
+		  	</span>
+
+
+		  </div>
 		  <div class="card-body text-dark">
 		    <p class="card-text">{{$comentario->cuerpo}}</p>
 		  </div>
@@ -34,6 +51,15 @@
 		@endforeach
 
 		<br>
+
+		@if(session('mensaje'))
+		<div class="alert alert-danger fade show">
+	    	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			    <span aria-hidden="true">&times;</span>
+			</button>
+			{{session('mensaje')}}
+	    </div>
+	    @endif
 
 {{-- 		aca terminan los comentarios --}}
 

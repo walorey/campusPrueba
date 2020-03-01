@@ -67,6 +67,7 @@ Route::group(['middleware'=>['admin'],'prefix' => 'admin'], function(){
 
 	Route::resource('users', 'UserController');
 	Route::resource('files', 'FileController');
+	Route::resource('comentarios', 'ComentarioController');
 
 	Route::get('/CrearUsuario', [
 	'uses'=>'UserController@create',
