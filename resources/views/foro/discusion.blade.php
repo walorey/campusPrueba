@@ -46,13 +46,13 @@
 		  	<span class="float-right">
 		  		<span>{{$comentario->created_at}} &nbsp</span>
 
-
+		  		@if(Auth::user()->type == 'admin')
 		  	    <form class="d-inline" method="POST" action="{{route('comentarios.destroy', $comentario->id)}}">
                   @method('DELETE')
                   @csrf
                   <button type="submit"  title="Eliminar" onclick="return confirm('¿Estas seguro que deseas eliminar el comentario?')" class="float-right"><i class="fas fa-trash"></i></button>
                 </form>
-
+                @endif
 
 
 		  	</span>

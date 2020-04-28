@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Discusion;
 use App\Comentario;
+use App\Notifications\preguntaNueva;
+use App\Notifications\comentarioNuevo;
 
 class DiscusionesController extends Controller
 {
@@ -47,6 +49,14 @@ class DiscusionesController extends Controller
         $discusion = new Discusion($request->all());
         $discusion->user_id = Auth::User()->id;
         $discusion->save();
+
+        $usuario = Auth::user();
+
+        $users = User::where('type', '=', 'admin')->get();
+        foreach ($users as $user) {
+            $user->notify(new preguntaNueva($usuario, $discusion));
+        }
+
 
         return redirect()->route('foro.index')->with('verde', 'Se publico tu pregunta');
     }
@@ -109,18 +119,10 @@ class DiscusionesController extends Controller
         $comentario->save();
         $discusion = Discusion::find($id);
 
+        $usuario = $discusion->usuario;
+        $usuario->notify(new comentarioNuevo($discusion));
+
         return redirect()->route('discusiones.show', $id)->with('mensaje', 'Comentario enviado!');
-    }
-
-    public function administrarDiscusiones()
-    {
-        $discusiones = Discusion::orderBy('id', 'DESC')->paginate(10);
-
-          $discusiones->each(function($discusiones){
-            $discusiones->cuerpo = substr($discusiones->cuerpo, 0, 50).' ...';
-        });
-
-        return view('admin.discusiones')->with('discusiones', $discusiones);
     }
 
     public function misDiscusiones()
