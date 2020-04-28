@@ -21,8 +21,8 @@
          <a href="{{route('archivos.index')}}">
             <button type="button" class="btn btn-secondary btn-lg">Ver archivos <i class="far fa-file-alt"></i></button>
          </a>
-         <a href="{{route('ver.discusiones')}}">
-            <button type="button" class="btn btn-dark btn-lg">Ver preguntas <i class="far fa-question-circle"></i></button>
+         <a href="{{route('foro.index')}}">
+            <button type="button" class="btn btn-success btn-lg">Foro <i class="far fa-question-circle"></i></button>
          </a>
      </div>
 

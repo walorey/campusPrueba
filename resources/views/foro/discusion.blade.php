@@ -10,6 +10,13 @@
 		<div class="card border-dark mb-3">
 		  <div class="card-header">
 		    {{$discusion->usuario->name}} {{$discusion->usuario->lastname}}
+		    @if(Auth::user()->id == $discusion->usuario->id || Auth::user()->type == 'admin')
+		    <form class="d-inline" method="POST" action="{{route('discusiones.destroy', $discusion->id)}}">
+            	@method('DELETE')
+            	@csrf
+            	<button type="submit"  title="Eliminar" onclick="return confirm('¿Estas seguro que deseas eliminar la pregunta?')" class="float-right"><i class="fas fa-trash"></i></button>
+            </form>
+		    @endif
 		  </div>
 		  <div class="card-body">
 		    <blockquote class="blockquote mb-0">
@@ -22,6 +29,14 @@
 		<br>
 
 		<h4>Comentarios</h4>
+		@if(session('mensaje'))
+		<div class="alert alert-success fade show">
+	    	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			    <span aria-hidden="true">&times;</span>
+			</button>
+			{{session('mensaje')}}
+	    </div>
+	    @endif
 
 		@foreach($discusion->comments as $comentario)
 
@@ -48,21 +63,13 @@
 		    <p class="card-text">{{$comentario->cuerpo}}</p>
 		  </div>
 		</div>
+		<br>
 		@endforeach
 
 		<br>
 
-		@if(session('mensaje'))
-		<div class="alert alert-danger fade show">
-	    	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			    <span aria-hidden="true">&times;</span>
-			</button>
-			{{session('mensaje')}}
-	    </div>
-	    @endif
 
 {{-- 		aca terminan los comentarios --}}
-
 		@if(Auth::user()->type == 'admin')
 
 		<div class="card border-info mb-3">

@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container">
+    @include('alertas')
+    <div class="p-3 mb-2 bg-dark text-white rounded">
+    <h1><a href="{{route('foro.index')}}" class="badge badge-success">Foro</a></h1>
+    </div>
     <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
 
@@ -24,10 +28,12 @@
                   {{$discusion->usuario->name}}
                   {{$discusion->usuario->lastname}}
 
-  {{--                 @php
-                   $discusion->cuerpo = substr($discusion->cuerpo, 0, 50) . '...' ;
-                  @endphp
-   --}}
+                <form class="d-inline" method="POST" action="{{route('discusiones.destroy', $discusion->id)}}">
+                      @method('DELETE')
+                      @csrf
+                      <button type="submit"  title="Eliminar" onclick="return confirm('¿Estas seguro que deseas eliminar la pregunta?')" class="float-right"><i class="fas fa-trash"></i></button>
+                </form>
+
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">{{$discusion->titulo}}</h5>

@@ -48,7 +48,7 @@ class DiscusionesController extends Controller
         $discusion->user_id = Auth::User()->id;
         $discusion->save();
 
-        return redirect()->route('foro.index');
+        return redirect()->route('foro.index')->with('verde', 'Se publico tu pregunta');
     }
 
     /**
@@ -97,7 +97,7 @@ class DiscusionesController extends Controller
     {
         $discusion = Discusion::find($id);
         $discusion->delete();
-        return redirect()->route('ver.discusiones');
+        return redirect()->route('foro.index')->with('amarillo', 'Se elimino la pregunta');
     }
 
 
@@ -109,7 +109,7 @@ class DiscusionesController extends Controller
         $comentario->save();
         $discusion = Discusion::find($id);
 
-        return redirect()->route('discusiones.show', $id);
+        return redirect()->route('discusiones.show', $id)->with('mensaje', 'Comentario enviado!');
     }
 
     public function administrarDiscusiones()

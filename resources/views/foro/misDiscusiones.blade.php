@@ -2,10 +2,11 @@
 
 @section('content')
 <div class="container">
+    <div class="p-3 mb-2 bg-dark text-white rounded">
+    <h1><a href="{{route('foro.index')}}" class="badge badge-success">Foro</a></h1>
+    </div>
     <div class="row">
         <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-
-
 
           <button type="button" data-toggle="modal" data-target="#modalPreguntar" class="btn btn-info">Preguntar</button>
           <a href="{{route('mis.discusiones')}}"><button type="button" class="btn btn-success">Mis preguntas</button></a>
@@ -18,9 +19,9 @@
 
             @if($discusiones->count()<1)
 
-              <h2>Aún no hay preguntas. ¡Puedes hacer una!</h2>
+              <h3>Aún no hay preguntas. ¡Puedes hacer una!</h3>
             @else
-              @foreach($usuario->discusiones as $discusion)
+              @foreach($discusiones as $discusion)
 
               <div class="card">
                 <div class="card-header">
