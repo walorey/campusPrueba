@@ -87,6 +87,8 @@ class ConfigController extends Controller
         if($validator->fails())
             return redirect()->back()->withErrors($validator);
 
+        //aca intenta iniciar sesion:
+
         if (!Auth::attempt(['email' => Auth::user()->email, 'password' => $request['passwordactual']]))
             return redirect()->back()->withErrors(['password' => ['La contraseña actual no coincide']]);
 

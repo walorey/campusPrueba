@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -35,14 +36,14 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
 
         $usuario = new User($request->all());
         $usuario->password = bcrypt($request->password);
         $usuario->save();
 
-        return redirect()->route('usuarios.index');
+        return redirect()->route('usuarios.index')->with('verde', 'Se creo al usuario: '.$usuario->name.' '.$usuario->lastname);
 
     }
 
@@ -99,7 +100,7 @@ class UserController extends Controller
     {
         $usuario = User::find($id);
         $usuario->delete();
-        return redirect()->route('usuarios.index');
+        return redirect()->route('usuarios.index')->with('amarillo', 'Se elimino al usuario: '.$usuario->name.' '.$usuario->lastname);
     }
 
     public function blanquearPassword(Request $request, $id)
@@ -111,9 +112,4 @@ class UserController extends Controller
 
     }
 
-    public function misDiscusiones()
-    {
-        $usuario = Auth::User();
-        return view('foro.misDiscusiones')->with('usuario', $usuario);
-    }
 }

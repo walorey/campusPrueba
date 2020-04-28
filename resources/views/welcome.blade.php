@@ -86,7 +86,7 @@
 
                 </div>
 
-                <h1>Educación alimentaria</h1>
+                <h1>Educación Alimentaria</h1>
             </div>
         </div>
     </body>

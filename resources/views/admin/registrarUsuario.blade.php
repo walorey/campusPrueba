@@ -4,6 +4,8 @@
 
 <div class="container">
 
+	@include('alertas')
+
 	<h1>Registrar usuario</h1>
 
 	<form method="POST" action="{{ route('users.store') }}">
@@ -25,18 +27,22 @@
 	  	    <input type="email" class="form-control" id="email" name="email" required>
 	  	  </div>
 	  	  <div class="form-group col-md-6">
-	  	    <label for="inputPassword4">Contraseña</label>
-	  	    <input type="password" class="form-control" id="password" name="password" required>
+	  		<label for="validationCustom04">Tipo</label>
+	  		<select class="form-control" name="type">
+ 				<option value="member">Cliente</option>
+ 				<option value="admin">Administrador</option>
+			</select>
 	  	  </div>
 	  	</div>
 	  	<div class="form-row">
-	  		<div class="form-group col-md-6">
-	  			<label for="validationCustom04">Tipo</label>
-	  			<select class="form-control" name="type">
- 					<option value="member">Cliente</option>
- 					<option value="admin">Administrador</option>
-				</select>
-	  		</div>
+	  	  <div class="form-group col-md-6">
+	  	    <label for="inputPassword4">Contraseña</label>
+	  	    <input type="password" class="form-control" id="password" name="password" required>
+	  	  </div>
+	  	  <div class="form-group col-md-6">
+	  	    <label for="inputPassword4">Repetir contraseña</label>
+	  	    <input type="password" class="form-control" id="password" name="password_confirmation" required>
+	  	  </div>
 	  	</div>
 	  	<button type="submit" class="btn btn-primary">Guardar</button>
 	</form>

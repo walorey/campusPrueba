@@ -4,28 +4,9 @@
 
 	<div class="container">
 
-		<div class="row">
+		@include('alertas')
 
-			<div class="col-lg-4 col-sm-12 col-md-12 col-xs-12">
-				<h1>Usuarios</h1>
-			</div>
-			<div class="col-lg-4 col-sm-12 col-md-12 col-xs-12">
-				<div class="btn-group" role="group" aria-label="Basic example">
-				  <a href="{{route('home')}}"><button type="button" class="btn btn-secondary btn-sm" style="margin-right: 5px;">Volver al inicio</button></a>
-				  <a href="{{route('crear.usuario')}}"><button type="button" class="btn btn-secondary btn-sm">Registrar usuario</button></a>
-				</div>
-			</div>
-			<div class="col-lg-4 col-sm-12 col-md-12 col-xs-12">
-{{-- 				<nav class="navbar navbar-light bg-light">
-				  <form class="form-inline">
-				    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-				    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ir</button>
-				  </form>
-				</nav> --}}
-			</div>
-
-
-		</div>
+		<h1>Usuarios</h1>
 
 		<div class="table-responsive">
 
@@ -73,6 +54,10 @@
 		</div>
 		{!! $usuarios->render()!!}
 
+		<div class="btn-group" role="group" aria-label="Basic example">
+			<a href="{{route('home')}}"><button type="button" class="btn btn-secondary btn-sm" style="margin-right: 5px;">Volver al inicio</button></a>
+			<a href="{{route('crear.usuario')}}"><button type="button" class="btn btn-secondary btn-sm">Registrar usuario</button></a>
+		</div>
 
 	</div>
 

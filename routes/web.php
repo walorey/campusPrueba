@@ -47,7 +47,7 @@ Route::group(['middleware'=>['auth']], function(){
 		]);
 
 		Route::get('MisPreguntas', [
-		'uses' => 'UserController@misDiscusiones',
+		'uses' => 'DiscusionesController@misDiscusiones',
 		'as' => 'mis.discusiones'
 		]);
 

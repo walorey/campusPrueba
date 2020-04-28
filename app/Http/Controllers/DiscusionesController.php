@@ -122,4 +122,11 @@ class DiscusionesController extends Controller
 
         return view('admin.discusiones')->with('discusiones', $discusiones);
     }
+
+    public function misDiscusiones()
+    {
+        $discusiones = Discusion::where('user_id', '=' ,Auth::user()->id)->orderBy('id', 'DESC')->paginate(10);
+
+        return view('foro.misDiscusiones')->with('discusiones', $discusiones);
+    }
 }
