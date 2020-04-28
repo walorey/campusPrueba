@@ -4,23 +4,8 @@
 
 <div class="container">
 
-
-
-	<div class="row">
-		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-			<h1>Archivos</h1>
-		</div>
-
-		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-				<div class="btn-group" role="group" aria-label="Basic example">
-					<a href="{{route('home')}}"><button type="button" class="btn btn-secondary" style="margin-right: 5px;">Volver al inicio</button></a>
-					<a href="{{route('files.create')}}"><button type="button" class="btn btn-secondary">Subir archivo</button></a>
-				</div>
-		</div>
-
-		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-		</div>
-	</div>
+	@include('alertas')
+	<h1>Archivos</h1>
 
 	<div class="table-responsive">
 		<table class="table">
@@ -63,7 +48,8 @@
 	</div>
 	{!! $archivos->render()!!}
 
-
+	<a href="{{route('home')}}"><button type="button" class="btn btn-secondary" style="margin-right: 5px;">Volver al inicio</button></a>
+	<a href="{{route('files.create')}}"><button type="button" class="btn btn-secondary">Subir archivo</button></a>
 
 </div>
 

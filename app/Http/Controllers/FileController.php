@@ -60,7 +60,7 @@ class FileController extends Controller
         $archivo->save();
 
 
-        return redirect()->route('archivos.index');
+        return redirect()->route('archivos.index')->with('verde', 'Se subio el archivo: '.$archivo->name);
     }
 
     /**

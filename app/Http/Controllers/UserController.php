@@ -86,7 +86,7 @@ class UserController extends Controller
         $usuario->email = $request->email;
         $usuario->type = $request->type;
         $usuario->save();
-        return redirect()->route('usuarios.index');
+        return redirect()->route('usuarios.index')->with('verde', 'Se actualizo al usuario: '.$usuario->name.' '.$usuario->lastname.' correctamente');
 
     }
 
