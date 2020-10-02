@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
+
 
 class FrontController extends Controller
 {
@@ -81,4 +83,12 @@ class FrontController extends Controller
     {
         //
     }
+
+    public function certificado($Nombre, $Apellido){
+
+        // $post = Post::where('slug', '=', $slug)->firstOrFail();
+        $pdf = PDF::loadView('certificado.certificado', compact('Nombre'))->setPaper('a4', 'landscape');//aca le digo que vista y con que datos
+        return $pdf->stream($Nombre.$Apellido.'.pdf'); //se puede descargar directamente cambiando stream por download
+    }
+
 }

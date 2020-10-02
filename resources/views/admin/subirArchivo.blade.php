@@ -12,9 +12,9 @@
 
 			<div class="form-group">
 			   <label for="exampleFormControlFile1">Carga el archivo</label>
-			   <input type="file" name="archivo" class="form-control-file" >
+			   <input type="file" name="archivo" class="form-control-file" required>
 			   <label>¿Que vas a subir?</label>
-			   <input class="form-control form-control-lg" type="text" name="name" placeholder="Nombre del archivo">
+			   <input class="form-control form-control-lg" type="text" name="name" placeholder="Nombre del archivo" required>
 			   <label>¿Que contiene el archivo?</label>
 			   <input type="text" name="descripcion" placeholder="Descripcion" class="form-control form-control-lg">
 	  		   <label for="validationCustom04">Tipo</label>

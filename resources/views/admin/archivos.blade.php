@@ -27,7 +27,7 @@
 		      <td>{{$archivo->descripcion}}</td>
 		      <td>{{$archivo->modulo}}</td>
 		      <td>
-		      	<a href="{{Storage::url($archivo->ruta)}}" target="_blank">Ver</a>
+		      	<a href="{{asset($archivo->ruta)}}" target="_blank">Ver</a>
 		      </td>
 		      <td>{{$archivo->created_at}}</td>
 		      <td>

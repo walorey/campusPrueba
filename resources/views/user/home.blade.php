@@ -1,7 +1,7 @@
 
 
 <div class="container">
-
+  <img src="https://cdn.pixabay.com/photo/2015/12/09/17/11/vegetables-1085063_960_720.jpg" class="img-fluid" alt="Responsive image">
   <br>
 
   <div class="card text-center">
@@ -41,7 +41,7 @@
               @foreach($archivos as $archivo)
                 @if($archivo->modulo==$i)
                   <ul>
-                    <li><a href="{{Storage::url($archivo->ruta)}}" target="_blank">{{$archivo->name}}</a></li>
+                    <li><a href="{{asset($archivo->ruta)}}" target="_blank">{{$archivo->name}}</a></li>
                   </ul>
                 @else
                 @endif
@@ -65,7 +65,20 @@
               @foreach($archivos as $archivo)
                 @if($archivo->modulo==$i)
                   <ul>
-                    <li><a href="{{Storage::url($archivo->ruta)}}" target="_blank">{{$archivo->name}}</a></li>
+                    <li><a href="{{asset($archivo->ruta)}}" target="_blank">{{$archivo->name}}</a></li>
+                    <li>
+
+                      <!-- Extra large modal -->
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-xl">Extra large modal</button>
+
+                      <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl" role="document">
+                          <div class="modal-content">
+                            <iframe src="{{asset($archivo->ruta)}}" class="embed-responsive-item"></iframe>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
                   </ul>
                 @else
                 @endif
@@ -88,7 +101,7 @@
               @foreach($archivos as $archivo)
                 @if($archivo->modulo==$i)
                   <ul>
-                    <li><a href="{{Storage::url($archivo->ruta)}}" target="_blank">{{$archivo->name}}</a></li>
+                    <li><a href="{{asset($archivo->ruta)}}" target="_blank">{{$archivo->name}}</a></li>
                   </ul>
                 @else
                 @endif
@@ -115,7 +128,7 @@
               @foreach($archivos as $archivo)
                   @if($archivo->modulo=="videos")
                   <ul>
-                    <li><a href="{{Storage::url($archivo->ruta)}}" target="_blank">{{$archivo->name}}</a></li>
+                    <li><a href="{{asset($archivo->ruta)}}" target="_blank">{{$archivo->name}}</a></li>
                   </ul>
                   @else
                   @endif
@@ -134,17 +147,5 @@
 </div>
 
 
-{{--   <div class="row">
-  @foreach($archivos as $archivo)
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">{{$archivo->name}}</h5>
-          <p class="card-text">{{$archivo->descripcion}}</p>
-          <a href="{{Storage::url($archivo->ruta)}}" target="_blank" class="btn btn-primary">Ver</a>
-        </div>
-      </div>
-    </div>
-  @endforeach
-  </div>
-</div> --}}
+@section('script')
+@endsection

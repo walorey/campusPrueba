@@ -13,6 +13,8 @@
 			<div class="form-group">
 			   <label>¿Que vas a subir?</label>
 			   <input class="form-control form-control-lg" type="text" name="name" value="{{$archivo->name}}">
+			   <label for="exampleFormControlFile1">Carga el archivo</label>
+			   <input type="file" name="archivo" class="form-control-file" >
 			   <label>¿Que contiene el archivo?</label>
 			   <input type="text" name="descripcion" value="{{$archivo->descripcion}}" class="form-control form-control-lg">
 	  		   <label for="validationCustom04">Tipo</label>

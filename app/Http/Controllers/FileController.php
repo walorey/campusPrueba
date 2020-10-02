@@ -39,13 +39,8 @@ class FileController extends Controller
     {
 
 
-        $ruta = $request->file('archivo')->store('public');
-        $archivo = new File();
-        $archivo->name = $request->name;
         // $archivo->ruta = asset($ruta);
         // $archivo->save();
-
-
         //esto lo mueve bien
         // Storage::put('public',$request->file('archivo'));
         // $archivo = new File();
@@ -54,6 +49,11 @@ class FileController extends Controller
         // $archivo->ruta = $ruta;
 
         // $path = Storage::disk('local')->putFile('public', $request->file('archivo'));
+
+        $archivo = new File();
+        $archivoRequest = $request->file('archivo');
+        $ruta = Storage::disk('public')->put('files', $archivoRequest);
+        $archivo->name = $request->name;
         $archivo->descripcion = $request->descripcion;
         $archivo->modulo = $request->modulo;
         $archivo->ruta = $ruta;
@@ -96,6 +96,11 @@ class FileController extends Controller
     public function update(Request $request, $id)
     {
         $archivo = File::find($id);
+        if ($request->hasFile('archivo')) {
+            $archivoRequest = $request->file('archivo');
+            $ruta = Storage::disk('public')->put('files', $archivoRequest);
+            $archivo->ruta = $ruta;
+        }
         $archivo->name = $request->name;
         $archivo->descripcion = $request->descripcion;
         $archivo->modulo = $request->modulo;

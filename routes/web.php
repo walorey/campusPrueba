@@ -15,9 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('verCertificado', function(){
+	return view('certificado.certificado');
+});
+
 Auth::routes();
 
-
+Route::get('Certificado/{Nombre}/{Apellido}', [
+	'uses' => 'FrontController@certificado'
+]);
 
 
 

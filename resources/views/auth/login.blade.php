@@ -57,7 +57,7 @@
                                    Entrar
                                 </button>
 
-                                Si olvido su contraseña comuniquese con alimentaria.edu@gmail.com
+                                Si olvido su contraseña comuniquese con contacto@educacionalimentaria.com.ar
 
 {{--                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">

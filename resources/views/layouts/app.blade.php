@@ -21,7 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
-
+    @yield('script')
 
     {{-- <script src="https://kit.fontawesome.com/5f8b1fb51c.js" crossorigin="anonymous"></script> --}}
 </head>

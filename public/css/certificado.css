@@ -1,0 +1,41 @@
+		.fuente-calibri{
+			font-family: 'calibri';
+		}
+
+		.firma{
+			display: block;
+		  	position: relative;
+		  	right: -862px;
+		}
+
+		.aclaracion{
+			  display: block;
+			  position: absolute;
+			  bottom: -47px;
+			  right: 187px;
+			  font-size: 20px;
+		}
+
+		.datos-firma{
+			  display: block;
+			  position: absolute;
+			  bottom: -81px;
+			  right: 187px;
+			  font-size: 20px;
+		}
+
+		.contorno{
+			border-color: #00B050;
+			border-width:4px;
+			border-style:solid;
+			background-image: url({{asset('img/fondo-certificado.png')}});
+			background-repeat: no-repeat;
+			background-color: #ffffff;
+			background-position: center;
+			padding: 25px;
+		}
+
+		.linea-firma{
+			color: #00B050 !important;
+			border:15px!important;
+		}
